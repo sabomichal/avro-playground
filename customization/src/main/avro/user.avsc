@@ -1,0 +1,26 @@
+{
+  "namespace": "com.barbulescu.avro",
+  "type": "record",
+  "name": "User",
+  "annotated": "javax.annotation.processing.Generated",
+  "fields": [
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "favorite_number",
+      "type": [
+        "int",
+        "null"
+      ]
+    },
+    {
+      "name": "favorite_color",
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  ]
+}
