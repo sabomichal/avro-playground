@@ -256,6 +256,9 @@ static {
 #end
 
 #end
+
+  $avrogeneratorextensions.staticConstructor($this, $schema)
++
   /**
    * Creates a new ${this.mangle($schema.getName())} RecordBuilder.
    * @return A new ${this.mangle($schema.getName())} RecordBuilder
@@ -263,8 +266,6 @@ static {
   public static #if ($schema.getNamespace())$this.mangle($schema.getNamespace()).#end${this.mangle($schema.getName())}.Builder newBuilder() {
     return new #if ($schema.getNamespace())$this.mangle($schema.getNamespace()).#end${this.mangle($schema.getName())}.Builder();
   }
-
-  $newbuilder.newBuilder($this, $schema)
 
   /**
    * Creates a new ${this.mangle($schema.getName())} RecordBuilder by copying an existing Builder.

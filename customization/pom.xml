@@ -49,7 +49,7 @@
                             <templateDirectory>${project.basedir}/src/main/resources/templates/</templateDirectory>
                             <stringType>String</stringType>
                             <fieldVisibility>private</fieldVisibility>
-                            <velocityToolsClassesNames>com.barbulescu.avro.custom.NewBuilder</velocityToolsClassesNames>
+                            <velocityToolsClassesNames>com.barbulescu.avro.custom.AvroGeneratorExtensions</velocityToolsClassesNames>
                         </configuration>
                     </execution>
                 </executions>

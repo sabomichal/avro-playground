@@ -1,26 +1,35 @@
-{
-  "namespace": "com.barbulescu.avro",
-  "type": "record",
-  "name": "User",
-  "annotated": "javax.annotation.processing.Generated",
-  "fields": [
-    {
-      "name": "name",
-      "type": "string"
-    },
-    {
-      "name": "favorite_number",
-      "type": [
-        "int",
-        "null"
-      ]
-    },
-    {
-      "name": "favorite_color",
-      "type": [
-        "string",
-        "null"
-      ]
-    }
-  ]
-}
+[
+  {
+    "namespace": "com.barbulescu.avro",
+    "type": "record",
+    "name": "com.barbulescu.avro.Address",
+    "fields": [
+      {
+        "name": "value",
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "namespace": "com.barbulescu.avro",
+    "type": "record",
+    "name": "User",
+    "fields": [
+      {
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "name": "favorite_number",
+        "type": [
+          "int",
+          "null"
+        ]
+      },
+      {
+        "name": "address",
+        "type": "Address"
+      }
+    ]
+  }
+]
