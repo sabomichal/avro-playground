@@ -258,7 +258,8 @@ static {
 #end
 
   $avrogeneratorextensions.staticConstructor($this, $schema)
-+
+  $avrogeneratorextensions.nestedGetter($this, $schema)
+
   /**
    * Creates a new ${this.mangle($schema.getName())} RecordBuilder.
    * @return A new ${this.mangle($schema.getName())} RecordBuilder
@@ -310,6 +311,8 @@ static {
     private ${this.javaUnbox($field.schema(), false)}.Builder ${this.mangle($field.name(), $schema.isError())}Builder;
 #end
 #end
+
+$avrogeneratorextensions.nestedSetter($this, $schema)
 
     /** Creates a new Builder */
     private Builder() {
