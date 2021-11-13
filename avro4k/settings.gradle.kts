@@ -1,3 +1,3 @@
 
-rootProject.name = "avro"
+rootProject.name = "avro4k"
 
