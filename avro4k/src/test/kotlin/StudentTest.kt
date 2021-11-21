@@ -1,6 +1,7 @@
 import com.github.avrokotlin.avro4k.Avro
 import com.github.avrokotlin.avro4k.io.AvroDecodeFormat
 import com.github.avrokotlin.avro4k.io.AvroEncodeFormat
+import data.Student
 import org.junit.jupiter.api.Test
 import java.io.ByteArrayOutputStream
 import kotlin.test.assertEquals
@@ -17,7 +18,7 @@ class StudentTest {
 
     @Test
     fun serialization() {
-        val student = Student(Name("Marius"), Age(23))
+        val student = Student("Marius", 23)
 
         val baos = ByteArrayOutputStream()
         Avro.default.openOutputStream(Student.serializer()) {
@@ -29,7 +30,7 @@ class StudentTest {
 
     @Test
     fun deserialization() {
-        val student = Student(Name("Marius"), Age(23))
+        val student = Student("Marius", 23)
 
         val schema = Avro.default.schema(Student.serializer())
         val actual = Avro.default.openInputStream(Student.serializer()) {

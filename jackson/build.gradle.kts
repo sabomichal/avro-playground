@@ -1,8 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.5.10"
-    kotlin("plugin.serialization") version "1.5.10"
+    kotlin("jvm") version "1.5.31"
     application
 }
 
@@ -15,7 +14,8 @@ repositories {
 
 dependencies {
     compileOnly("org.projectlombok:lombok:1.18.22")
-    implementation("com.github.avro-kotlin.avro4k:avro4k-core:1.5.0")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.13.0")
+    implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-avro:2.13.0")
     testImplementation(kotlin("test"))
 }
 
@@ -29,5 +29,5 @@ tasks.withType<KotlinCompile> {
 }
 
 application {
-    mainClass.set("MainKt")
+    mainClass.set("MainKt.kt")
 }

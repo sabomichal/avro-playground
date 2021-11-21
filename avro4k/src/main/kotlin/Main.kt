@@ -1,15 +1,22 @@
 import com.github.avrokotlin.avro4k.Avro
-import kotlinx.serialization.Serializable
+import com.github.avrokotlin.avro4k.io.AvroEncodeFormat
+import data.Student
+import java.io.ByteArrayOutputStream
 
 fun main() {
     val schema = Avro.default.schema(Student.serializer())
     println(schema.toString(true))
 }
 
-@Serializable
-data class Student(val name: Name, val age: Age)
+object Serializer {
+    val studentSchema = Avro.default.schema(Student.serializer())
 
-@Serializable
-data class Name(val value:String)
-@Serializable
-data class Age(val value:Int)
+    @JvmStatic
+    fun serialize(value:Student): String {
+        val baos = ByteArrayOutputStream()
+        Avro.default.openOutputStream(Student.serializer()) {
+            encodeFormat = AvroEncodeFormat.Json
+        }.to(baos).write(value).close()
+        return String(baos.toByteArray())
+    }
+}
