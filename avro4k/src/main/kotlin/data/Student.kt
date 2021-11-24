@@ -7,4 +7,5 @@ import kotlinx.serialization.Serializable
 @AvroName("Student")
 @AvroNamespace("com.students")
 @Serializable
-data class Student(val name: String, val age: Int)
+data class Student(val name: String, val age: Int, val marks: List<Int>)
+

@@ -1,25 +1,22 @@
 {
-  "type" : "record",
-  "name" : "Student",
-  "fields" : [ {
-    "name" : "name",
-    "type" : {
-      "type" : "record",
-      "name" : "Name",
-      "fields" : [ {
-        "name" : "value",
-        "type" : "string"
-      } ]
+  "type": "record",
+  "name": "Student",
+  "namespace": "com.students",
+  "fields": [
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "age",
+      "type": "int"
+    },
+    {
+      "name": "marks",
+      "type": {
+        "type": "array",
+        "items": "int"
+      }
     }
-  }, {
-    "name" : "age",
-    "type" : {
-      "type" : "record",
-      "name" : "Age",
-      "fields" : [ {
-        "name" : "value",
-        "type" : "int"
-      } ]
-    }
-  } ]
+  ]
 }

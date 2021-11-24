@@ -16,6 +16,7 @@ repositories {
 dependencies {
     compileOnly("org.projectlombok:lombok:1.18.22")
     implementation("com.github.avro-kotlin.avro4k:avro4k-core:1.5.0")
+    testImplementation("org.skyscreamer:jsonassert:1.5.0")
     testImplementation(kotlin("test"))
 }
 
