@@ -17,6 +17,14 @@
         "type": "array",
         "items": "int"
       }
+    },
+    {
+      "name": "comments",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
     }
   ]
 }
